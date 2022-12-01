@@ -8,18 +8,18 @@ namespace csharp_oop_shop_2
 {
     public class Liquido : Prodotto
     {
-        private string tipo = "";
+        private bool potabile = false;
         private bool gassata = false;
 
-        public Liquido(string nome, string tipo, bool gassata, string descrizione, double prezzo, double iva) : base(nome, descrizione, prezzo, iva)
+        public Liquido(string nome, bool potabile, bool gassata, string descrizione, double prezzo, double iva) : base(nome, descrizione, prezzo, iva)
         {
-            this.tipo = tipo;
+            this.potabile = potabile;
             this.gassata = gassata;
         }
 
-        public string GetTipo()
+        public bool GetPot()
         {
-            return tipo;
+            return potabile = false;
         }
 
         public bool GetGassata()
@@ -27,14 +27,31 @@ namespace csharp_oop_shop_2
             return gassata = false;
         }
 
-        public void SetTipo(string tipo)
+        public void SetTipo(bool potabile)
         {
-            this.tipo = tipo;
+            this.potabile = potabile;
         }
 
         public void SetGassata(bool gassata)
         {
             this.gassata = gassata;
+        }
+
+        public bool Pot()
+        {
+            return potabile = true;
+        }
+
+        private string StampaPot()
+        {
+            if (this.potabile == true)
+            {
+                return "Potabile";
+            }
+            else
+            {
+                return "Non è potabile";
+            }
         }
 
         public bool Gas()
@@ -46,17 +63,18 @@ namespace csharp_oop_shop_2
         {
             if(this.gassata == true)
             {
-                return "Gassata";
+                return "Gassato";
             }
             else
             {
-                return "Non è gassata";
+                return "Non è gassato";
             }
         }
 
         public override void StampaProdotto()
         {
             base.StampaProdotto();
+            Console.WriteLine(StampaPot());
             Console.WriteLine(StampaGas());
         }
     }
