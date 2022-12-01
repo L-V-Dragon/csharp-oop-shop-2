@@ -75,7 +75,7 @@ namespace csharp_oop_shop_2
             this.iva = iva;
         }
 
-        public void StampaProdotto()
+        public virtual void StampaProdotto()
         {
             Console.WriteLine("Codice: " + codice);
             Console.WriteLine("Nome: " + this.nome);

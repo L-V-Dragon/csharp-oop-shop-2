@@ -53,5 +53,11 @@ namespace csharp_oop_shop_2
                 return "Non è gassata";
             }
         }
+
+        public override void StampaProdotto()
+        {
+            base.StampaProdotto();
+            Console.WriteLine(StampaGas());
+        }
     }
 }

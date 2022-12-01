@@ -60,5 +60,12 @@ namespace csharp_oop_shop_2
                 return "Non è surgelato";
             }
         }
+
+        public override void StampaProdotto()
+        {
+            base.StampaProdotto();
+            Console.WriteLine(StampaVeg());
+            Console.WriteLine(StampaSurgelato());
+        }
     }
 }
